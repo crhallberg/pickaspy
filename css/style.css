@@ -1,0 +1,145 @@
+:root {
+  --chex-selected-bg: #222;
+}
+html { font-size: 16px; }
+body {
+  max-width: 700px;
+  margin: auto;
+  padding: .5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  color: #222;
+  background-color: #f4f4f4;
+  text-rendering: geometricPrecision;
+}
+.offline {
+  margin: 2rem 0;
+  text-align: center;
+  color: #555;
+}
+.head {
+  display: block;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+footer {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #444;
+}
+
+.hidden-sm { display: none; }
+@media(min-width: 568px) {
+  .hidden-sm { display: inherit; }
+  .hidden-lg { display: none; }
+  .left,
+  .right {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  .left { float: left; }
+  .right { float: right; }
+  footer::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+#numbers,
+button {
+  display: block;
+  width: 100%;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border-radius: 4px;
+}
+#numbers {
+  box-sizing: border-box;
+  padding-bottom: 1px;
+  border: 1px solid #777;
+  background-color: #fff;
+}
+#numbers input[type="tel"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  border: 0;
+  font-size: 1.2rem;
+  background: transparent;
+}
+#numbers input[type="tel"]:invalid { color: red; }
+
+button {
+  border: 0;
+  padding: .5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #222;
+  color: #fff;
+}
+button:disabled { background-color: #555; }
+@media(min-width: 768px) {
+  button { padding: .75rem; }
+}
+
+.chex label {
+  box-sizing: border-box;
+  display: block;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+   padding-left: .5rem;
+}
+.chex label::before { padding-right: 0; }
+.chex label i,
+.chex label small {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
+.chex label i {
+  text-indent: .25rem;
+  color: #555;
+}
+.chex label i i { color: #777; }
+.chex label small {
+  display: block;
+  margin-left: 1.3rem;
+  text-indent: 0;
+  color: #333;
+}
+.chex :checked ~ label i,
+.chex :checked ~ label small { color: #ccc; }
+.chex :checked ~ label i i { color: #aaa; }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+#modal {
+  display: table;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #fff;
+}
+#modal p { text-align: center; }
+#modal.error { color: #d00; }
+#modal.success { color: #0d0; }
