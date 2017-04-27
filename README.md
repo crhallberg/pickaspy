@@ -2,7 +2,7 @@
 
 After pulling, run `composer install`.
 
-## Config
+## Configuration
 
 Configurations for [reCAPTCHA](https://www.google.com/recaptcha/intro/invisible.html) and [Twilio](https://www.twilio.com/) are pulled from a file `config.php` in the root folder.
 
@@ -17,3 +17,13 @@ Configurations for [reCAPTCHA](https://www.google.com/recaptcha/intro/invisible.
         ]
     ];
 ```
+
+## Thank You
+
+Built using the following tools:
+
+Dev: [Notepad++](https://notepad-plus-plus.org/), [Composer](https://getcomposer.org/), [FileZilla](https://filezilla-project.org/), [GIMP](https://www.gimp.org/)
+
+Back: [Twilio](https://www.twilio.com/), [libphonenumber](https://github.com/googlei18n/libphonenumber) ([php port](https://github.com/giggsey/libphonenumber-for-php))
+
+Front: [Chex](https://crhallberg.com/chex), [Font Awesome](http://fontawesome.io), [Normalize.css](https://github.com/necolas/normalize.css)

@@ -35,6 +35,10 @@ footer {
   line-height: 1.5;
   color: #444;
 }
+.love { font-size: 14px; }
+.love a { text-decoration: none; }
+.love a:hover { text-decoration: underline; }
+.love .fa-heart { color: #639; }
 
 .hidden-sm { display: none; }
 @media(min-width: 568px) {
@@ -143,3 +147,9 @@ button:disabled { background-color: #555; }
 #modal p { text-align: center; }
 #modal.error { color: #d00; }
 #modal.success { color: #0d0; }
+
+#g-recaptcha { display: none; }
+.rc-anchor-invisible-text {
+  background: #777;
+  padding: 0.2rem 1rem;
+}
