@@ -1,7 +1,7 @@
 # Game Rules
 
 - [Spyfall](#spyfall)
-- [Mafia/Werewolf](#mafia-werewolf)
+- [Mafia/Werewolf](#mafia--werewolf)
 - [Two Rooms and a Boom](#two-rooms-and-a-boom)
 
 -------
