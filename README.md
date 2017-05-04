@@ -4,7 +4,11 @@ After pulling, run `composer install`.
 
 ## Configuration
 
-Configurations for [reCAPTCHA](https://www.google.com/recaptcha/intro/invisible.html) and [Twilio](https://www.twilio.com/) are pulled from a file `config.php` in the root folder.
+Configurations for [reCAPTCHA](https://www.google.com/recaptcha/intro/invisible.html) and [Twilio](https://www.twilio.com/) are pulled from two files, `config.js` and `config.php`, in the root folder.
+
+```javascript
+const RECAPTCHA_KEY = 'KEY';
+```
 
 ```php
 <?php

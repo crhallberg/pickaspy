@@ -110,12 +110,16 @@
     </div>
 
     <script src="/js/form.js"></script>
+    <script src="/config.js"></script>
     <script>
       function reveal() {
         $('main').innerHTML = $('template').innerHTML;
         bindLastInput();
+        if (typeof RECAPTCHA_KEY === 'undefined') {
+            console.error('Please add config.js defining RECAPTCHA_KEY');
+        }
         grecaptcha.render('g-recaptcha', {
-          'sitekey' : 'RECAPTCHA_KEY',
+          'sitekey' : RECAPTCHA_KEY,
           'callback' : submit,
           'size': 'invisible',
           'badge': 'inline'
