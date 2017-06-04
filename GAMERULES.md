@@ -1,8 +1,12 @@
 # Game Rules
 
+## Pick-A-Spy Games
 - [Spyfall](#spyfall)
 - [Mafia/Werewolf](#mafia--werewolf)
 - [Two Rooms and a Boom](#two-rooms-and-a-boom)
+
+## Other Games
+- [Mascarade](#mascarade)
 
 -------
 
@@ -68,3 +72,46 @@ There will be three rounds, a 3-minute round, a 2-minute round, and a 1-minute r
 | **22+ Players**   | 3 hostage      | 2 hostage      | 1 hostage      |
 
 At the end of the last exchange, the President and the Bomber reveal themselves. If they are in the same room, the Assassination was successful and Red Team wins. If they are in different rooms, the plot has been foiled and Blue Team wins.
+
+-------
+
+## Masquerade
+
+> Hide your identity and amass your fortune... but do you really know who you are?
+
+You will need some pennies and nickels to keep score for this one. Two nickels and four pennies per person is ideal, but probably too much. You will also need to designate a place to stack the coins amassed by the Courthouse.
+
+Every player starts with 6 coins. You win the game if you get 13 coins. If any player goes bankrupt, the game ends and the richest player wins.
+
+Starting with the youngest player, you will have the option to do one of the following on your turn.
+
+### 1/ Check your card
+
+Take a peek at your card to confirm your identity.
+
+### 2/ Swap cards with another player
+
+Take your card and any other player's card and hold them under the table where nobody - not even you - can see them. Shuffle them about and return one to the original player and the other in front of you. Neither of you may look at your card after this. You are welcome to intentionally swap - or not swap - the two cards, but do so carefully: you must shuffle the cards about for a few seconds and you cannot look at what you're doing.
+
+Bonus: for a better game, the first four turns should be spent solely swapping cards. This uncertainty will vastly improve the game.
+
+### 3/ Announce "your" card and use that power
+
+Every role has its own special power. You have the option to announce your role and use the power of the card that is face down in front of you - or not. If no one challenges you, you do not have to prove your role.
+
+However, when a player announces a role that you have, you may reveal your card to prove them wrong. If you succeed in proving them wrong, use your rightful power immediately. Whomever is caught - or wrong - pays one coin to the Courthouse. If it's your turn immediately after, you must swap cards (no doubles).
+
+| Role           | Power |
+|----------------|-------|
+| **Spy**        | Looks at their card, another player's card, then swaps - or not. |
+| **Bishop**     | Takes 2 gold coins from the richest player. |
+| **Judge**      | Takes all of the courthouse's gold. |
+| **Thief**      | Takes 1 gold coin from both adjacent players. |
+| **Queen**      | Receives 2 gold coins. |
+| **King**       | Receives 3 gold coins. |
+| **Witch**      | Swaps their entire fortune with that of another player of their choice. |
+| **Peasant**    | Receives 1 gold coin. There are two Peasants. When announced, any number of the other players may also announce they are a Peasant, and all claimers reveal to prove it. If two peasants are revealed, they each receive 2 gold coins, all impostors pay their fine. |
+| **Fool**       | Gets 1 gold coin and swaps - or not - two cards other than their own. |
+| **Cheat**      | Wins the game if they have 10 or more gold coins. |
+| **Widow**      | Immediately brings their coin fortune up to 10. |
+| **Inquisitor** | Points at another player, who must guess who their character is or give the Inquisitor 4 gold coins |
