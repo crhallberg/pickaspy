@@ -33,10 +33,23 @@
 
     // Send texts
     $client = new \Twilio\Rest\Client($CONFIG['twilio']['sid'], $CONFIG['twilio']['token']);
+    // Send link-back thank you
+    if (!isset($_SESSION['thanked'])) {
+        foreach($validNumbers as $i => $number_obj) {
+            $client->messages->create(
+                $validator->formatNumber($number_obj, \libphonenumber\PhoneNumberFormat::E164), // TO:
+                [
+                    'from' => $CONFIG['twilio']['number'],
+                    'body' => 'Thank you for using pickaspy.com!'
+                ]
+            );
+        }
+        $_SESSION['thanked'] = true;
+    }
+    // Use the client to do fun stuff like send text messages!
     foreach($validNumbers as $i => $number_obj) {
-        // Use the client to do fun stuff like send text messages!
         $client->messages->create(
-  /* to: */ $validator->formatNumber($number_obj, \libphonenumber\PhoneNumberFormat::E164),
+            $validator->formatNumber($number_obj, \libphonenumber\PhoneNumberFormat::E164), // TO:
             [
                 'from' => $CONFIG['twilio']['number'],
                 'body' => $roles[$i]
