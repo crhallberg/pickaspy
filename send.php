@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $loader = require(__DIR__ . '/vendor/autoload.php');
     $loader->addPsr4('PickASpy\\', 'src/');
 
@@ -28,11 +30,6 @@
     $game = new $class($count);
 
     $roles = $game->getMessages();
-    // error_log("\n");
-    // error_log(count($roles));
-    // error_log($validator->formatNumber($validNumbers[0], \libphonenumber\PhoneNumberFormat::E164));
-    // error_log($roles[0]);
-    // error_log("\n");
 
     // Send texts
     $client = new \Twilio\Rest\Client($CONFIG['twilio']['sid'], $CONFIG['twilio']['token']);
@@ -46,6 +43,9 @@
             ]
         );
     }
+
+    // Report SESSION id, game, and number of players
+    error_log(sprintf('[GAME][%d]: %s %s', count($validNumbers), session_id(), $_POST['gametype']));
 
     // Return JSON of valid numbers
     header('Content-Type: application/json');
