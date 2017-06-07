@@ -11,7 +11,7 @@ function serialize(token) {
     gametype: document.querySelector('[name="gametype"]:checked').id,
     recaptcha: token
   };
-  console.log(obj);
+  // console.log(obj);
   return obj;
 }
 function hideModal() {
