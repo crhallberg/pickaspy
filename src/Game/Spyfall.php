@@ -41,7 +41,11 @@
         {
             parent::__construct($count);
 
-            $location = $this->random_key($this->locations);
+            session_start();
+            do {
+                $location = $this->random_key($this->locations);
+            } while (!isset($_SESSION['spyfall_prev']) || $_SESSION['spyfall_prev'] === $location);
+            $_SESSION['spyfall_prev'] = $location;
 
             $this->specialRoles = ['the Spy! Figure out where you are'];
             $jobs = $this->locations[$location];
