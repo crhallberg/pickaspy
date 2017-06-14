@@ -4,7 +4,7 @@
 
     $CONFIG = require(__DIR__ . '/config.php');
 
-    $BETA = strpos(__DIR__, 'beta') !== false;
+    $BETA = strpos(__DIR__, 'dev') !== strpos(__DIR__, 'stage');
     $REMOTE_ADDR = $_SERVER['HTTP_X_FORWARDED_FOR'];
 
     $validator = new \PickASpy\Validator($CONFIG['recaptchaKey'], $REMOTE_ADDR);
