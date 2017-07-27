@@ -16,10 +16,9 @@
                 $keys[] = $key;
             }
 
-            session_start();
             do {
                 $location = $this->random_from($keys);
-            } while (!isset($_SESSION['spyfall_prev']) || $_SESSION['spyfall_prev'] === $location);
+            } while (isset($_SESSION['spyfall_prev']) && $_SESSION['spyfall_prev'] == $location);
             $_SESSION['spyfall_prev'] = $location;
 
             $this->specialRoles = ['the Spy! Figure out where you are'];
