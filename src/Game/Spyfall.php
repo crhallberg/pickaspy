@@ -11,10 +11,14 @@
             parent::__construct($count);
 
             $locations = json_decode($this->get_data('spyfall_locations.json'));
+            $keys = [];
+            foreach ($locations as $key => $val) {
+                $keys[] = $key;
+            }
 
             session_start();
             do {
-                $location = $this->random_key($locations);
+                $location = $this->random_from($keys);
             } while (!isset($_SESSION['spyfall_prev']) || $_SESSION['spyfall_prev'] === $location);
             $_SESSION['spyfall_prev'] = $location;
 
