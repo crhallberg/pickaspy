@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $loader = require(__DIR__ . '/vendor/autoload.php');
     $loader->addPsr4('PickASpy\\', 'src/');
 
@@ -28,24 +30,35 @@
     $game = new $class($count);
 
     $roles = $game->getMessages();
-    // error_log("\n");
-    // error_log(count($roles));
-    // error_log($validator->formatNumber($validNumbers[0], \libphonenumber\PhoneNumberFormat::E164));
-    // error_log($roles[0]);
-    // error_log("\n");
 
     // Send texts
     $client = new \Twilio\Rest\Client($CONFIG['twilio']['sid'], $CONFIG['twilio']['token']);
+    // Send link-back thank you
+    if (!isset($_SESSION['thanked'])) {
+        foreach($validNumbers as $i => $number_obj) {
+            $client->messages->create(
+                $validator->formatNumber($number_obj, \libphonenumber\PhoneNumberFormat::E164), // TO:
+                [
+                    'from' => $CONFIG['twilio']['number'],
+                    'body' => 'Thank you for using pickaspy.com!'
+                ]
+            );
+        }
+        $_SESSION['thanked'] = true;
+    }
+    // Use the client to do fun stuff like send text messages!
     foreach($validNumbers as $i => $number_obj) {
-        // Use the client to do fun stuff like send text messages!
         $client->messages->create(
-  /* to: */ $validator->formatNumber($number_obj, \libphonenumber\PhoneNumberFormat::E164),
+            $validator->formatNumber($number_obj, \libphonenumber\PhoneNumberFormat::E164), // TO:
             [
                 'from' => $CONFIG['twilio']['number'],
                 'body' => $roles[$i]
             ]
         );
     }
+
+    // Report SESSION id, game, and number of players
+    error_log(sprintf('[GAME][%d]: %s %s', count($validNumbers), session_id(), $_POST['gametype']));
 
     // Return JSON of valid numbers
     header('Content-Type: application/json');

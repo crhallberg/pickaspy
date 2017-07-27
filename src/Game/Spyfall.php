@@ -11,11 +11,12 @@
             parent::__construct($count);
 
             $locations = json_decode($this->get_data('spyfall_locations.json'));
-            $keys = [];
-            foreach ($locations as $key => $val) {
-                $keys[] = $key;
-            }
-            $location = $this->random_from($keys);
+
+            session_start();
+            do {
+                $location = $this->random_key($locations);
+            } while (!isset($_SESSION['spyfall_prev']) || $_SESSION['spyfall_prev'] === $location);
+            $_SESSION['spyfall_prev'] = $location;
 
             $this->specialRoles = ['the Spy! Figure out where you are'];
             $jobs = $locations->$location;
